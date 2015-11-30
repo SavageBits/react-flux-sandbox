@@ -1,5 +1,9 @@
 $ = jQuery = require('jquery'); //because bootstrap expects jquery to exist globally
+var React = require('react');
+var Home = require('./components/homePage');
 
-var App = console.log('hello worlds from browersify');
+React.render(<Home />, document.getElementById('app'));
 
-module.exports = App;
+// var App = console.log('hello worlds from browersify');
+//
+// module.exports = App;
