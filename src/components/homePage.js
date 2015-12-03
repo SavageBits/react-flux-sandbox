@@ -5,7 +5,7 @@ var React = require('react');
 var Home = React.createClass({
    render: function() {
         return (
-            <div className="container">
+            <div>
                 <div className="panel panel-info">
                     <div className="panel-body">
                     <form ng-submit="todoCtrl.createTodo()">
@@ -16,9 +16,9 @@ var Home = React.createClass({
                     </div>
                     <div className="form-group">
                         <label htmlFor="inputTodoDate">when it be</label>
-                        <input class="form-control" id="inputTodoDate" type="date" />
+                        <input className="form-control" id="inputTodoDate" type="date" />
                     </div>
-                    <input class="btn btn-primary btn-sm" type="submit" value="add" />
+                    <input className="btn btn-primary btn-sm" type="submit" value="add" />
                     </form>
                     </div>
                 </div>

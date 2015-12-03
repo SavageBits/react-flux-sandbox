@@ -8,7 +8,8 @@ var _clone = function(item) {
 
 var TaskApi = {
     getAllTasks: function() {
-        console.log('this');
         return _clone(tasks);
     }
 }
+
+module.exports = TaskApi;
