@@ -3,7 +3,7 @@ var React = require('react');
 var Home = require('./components/homePage');
 var Header = require('./components/common/header');
 
-React.render(<Home />, document.getElementById('app'));
+React.render(<div><Header/><Home/></div>, document.getElementById('app'));
 
 // var App = console.log('hello worlds from browersify');
 //

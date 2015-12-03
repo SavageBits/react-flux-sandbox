@@ -19,6 +19,7 @@ var config = {
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
         ],
+        images: './src/images/*',
         dist: './dist',
         appJs: './src/app.js'
     },
@@ -66,6 +67,11 @@ gulp.task('css', function() {
         .pipe(gulp.dest(config.paths.dist + '/css'))
 });
 
+gulp.task('images', function() {
+    gulp.src(config.paths.images)
+        .pipe(gulp.dest(config.paths.dist + '/images'))
+});
+
 gulp.task('lint', function() {
     return gulp.src(config.paths.js)
         .pipe(lint({ config: 'eslint.config.json' }))
@@ -78,4 +84,4 @@ gulp.task('watch', function() {
 });
 
 //runs when you run 'gulp' from command line
-gulp.task('default', ['html', 'js', 'css', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'images', 'lint', 'open', 'watch']);

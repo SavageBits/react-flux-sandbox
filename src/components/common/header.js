@@ -8,7 +8,7 @@ var Header = React.createClass({
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <a href="/" className="navbar-brand">
-                        Logo
+                        Logo time
                     </a>
                     <ul className="nav navbar-nav">
                         <li><a href="/">Home</a></li>
