@@ -3,6 +3,10 @@
 var React = require('react');
 
 var TaskList = React.createClass({
+    propTypes: {
+        tasks: React.PropTypes.array.isRequired
+    },
+
     render: function() {
         var createTaskRow = function(task) {
             return (
@@ -14,7 +18,7 @@ var TaskList = React.createClass({
 
         return (
             <div className="panel panel-success">
-                today <span className="badge">0</span>
+                today {this.props.divTitle} <span className="badge">0</span>
                 <ul className="list-group">
                     {this.props.tasks.map(createTaskRow, this)}
                 </ul>

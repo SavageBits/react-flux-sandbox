@@ -4,7 +4,7 @@ var React = require('react');
 var TaskApi = require('../../api/taskApi');
 var TaskList = require('./taskList');
 
-var Tasks = React.createClass({
+var TaskPage = React.createClass({
     getInitialState: function() {
         return {
             tasks: []
@@ -14,6 +14,7 @@ var Tasks = React.createClass({
     componentDidMount: function() {
         if(this.isMounted()) {
             //will need to use callback or promise when actually hitting db
+            // so we call setState after the data is returned from the datasource
             this.setState({ tasks: TaskApi.getAllTasks() });
         }
     },
@@ -21,10 +22,10 @@ var Tasks = React.createClass({
     render: function() {
         return (
             <div className="panel panel-success">
-                <TaskList tasks={this.state.tasks}/>
+                <TaskList tasks={this.state.tasks} divTitle="hello"/>
             </div>
         );
     }
 });
 
-module.exports = Tasks;
+module.exports = TaskPage;

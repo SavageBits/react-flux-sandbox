@@ -21,7 +21,7 @@ var config = {
         ],
         images: './src/images/*',
         dist: './dist',
-        appJs: './src/app.js'
+        appJs: './src/main.js'
     },
     browser: 'firefox'
 };
