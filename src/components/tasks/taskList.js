@@ -5,7 +5,7 @@ var React = require('react');
 var TaskList = React.createClass({
     propTypes: {
         tasks: React.PropTypes.array.isRequired
-    },
+    },    
 
     render: function() {
         var createTaskRow = function(task) {
