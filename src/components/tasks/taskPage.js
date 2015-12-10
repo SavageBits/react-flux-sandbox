@@ -9,6 +9,22 @@ var Firebase = require('firebase');
 var TaskPage = React.createClass({
     mixins: [ReactFireMixin],
 
+    statics: {
+            willTransitionTo: function(transition, params, query, callback) {
+                if (!confirm('Are you sure you want to see this page?')) {
+                    transition.abort();
+                } else {
+                    callback();
+                }
+
+            },
+            willTransitionFrom: function(transition, component) {
+                if (!confirm('Are you sure you want to leave this page?')) {
+                    transition.abort();
+                }
+            }
+    },
+
     getInitialState: function() {
         return {
             tasks: []

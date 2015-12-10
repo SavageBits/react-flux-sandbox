@@ -4,6 +4,8 @@ var React = require('react');
 var Router = require('react-router');
 var DefaultRoute = Router.DefaultRoute;
 var Route = Router.Route;
+var NotFoundRoute = Router.NotFoundRoute;
+var Redirect = Router.Redirect;
 
 
 var routes = (
@@ -12,6 +14,8 @@ var routes = (
         <Route name="about" handler={require('./components/about/aboutPage')} />
         <Route name="tasks" handler={require('./components/tasks/taskPage')} />
         <Route path="/task/:taskId" handler={require('./components/task/taskDetailPage')} />
+        <NotFoundRoute handler={require('./components/NotFoundPage')} />
+        <Redirect from="pickle" to="tasks" />
     </Route>
 )
 
