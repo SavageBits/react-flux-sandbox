@@ -16,6 +16,10 @@ var TaskApi = {
         return _clone(tasks);
     },
 
+    getTaskById: function(taskId) {
+        console.log(taskId + ', man!');
+    },
+
     loadTasks: function(successFunction) {
 
     },

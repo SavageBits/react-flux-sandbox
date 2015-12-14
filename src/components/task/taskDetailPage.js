@@ -1,8 +1,17 @@
 "use strict";
 
 var React = require('react');
+var TaskApi = require('../../api/taskApi');
 
 var Task = React.createClass({
+    componentWillMount: function() {
+        var taskId = this.props.params.taskId;
+
+        if (taskId) {
+            this.setState({ task: TaskApi.getTaskById(taskId) })
+        }
+    },
+
     render: function() {
         return (
             <div>

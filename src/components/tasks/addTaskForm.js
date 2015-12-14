@@ -3,6 +3,13 @@
 var React = require('react');
 
 var AddTaskForm = React.createClass({
+    propTypes: {
+        task: React.PropTypes.object.isRequired,
+        onSave: React.PropTypes.func.isRequired,
+        onChange: React.PropTypes.func.isRequired,
+        errors: React.PropTypes.object
+    },
+
     render: function() {
         return (
             <div>
@@ -14,7 +21,8 @@ var AddTaskForm = React.createClass({
                         <input className="form-control" id="inputTodoText" type="text" size="30"
                             name="what"
                             value={this.props.task.what}
-                            onChange={this.props.onChange} />
+                            onChange={this.props.onChange}
+                            error={this.props.errors.what} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="inputTodoDate">when it be</label>
