@@ -12,13 +12,17 @@ var AddTaskForm = React.createClass({
                     <div className="form-group">
                         <label htmlFor="inputTodoText">what is happening</label>
                         <input className="form-control" id="inputTodoText" type="text" size="30"
-                               placeholder="add new todo here" />
+                            name="what"
+                            value={this.props.task.what}
+                            onChange={this.props.onChange} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="inputTodoDate">when it be</label>
-                        <input className="form-control" id="inputTodoDate" type="date" />
+                        <input className="form-control" id="inputTodoDate" type="date"
+                            />
                     </div>
-                    <input className="btn btn-primary btn-sm" type="submit" value="add" />
+                    <input className="btn btn-primary btn-sm" type="submit" value="add"
+                        onClick={this.props.onSave} />
                     </form>
                     </div>
                 </div>

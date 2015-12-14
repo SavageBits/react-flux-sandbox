@@ -18,6 +18,10 @@ var TaskApi = {
 
     loadTasks: function(successFunction) {
 
+    },
+
+    saveTask: function() {
+        console.log("save clicked");
     }
 }
 

@@ -12,7 +12,7 @@ var routes = (
     <Route name="app" path="/" handler={require('./components/app')}>
         <DefaultRoute handler={require('./components/homePage')} />
         <Route name="about" handler={require('./components/about/aboutPage')} />
-        <Route name="tasks" handler={require('./components/tasks/taskPage')} />
+        <Route name="tasks" handler={require('./components/tasks/taskPage')} />        
         <Route path="/task/:taskId" handler={require('./components/task/taskDetailPage')} />
         <NotFoundRoute handler={require('./components/NotFoundPage')} />
         <Redirect from="pickle" to="tasks" />
