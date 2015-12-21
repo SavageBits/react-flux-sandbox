@@ -23,11 +23,12 @@ var TaskStore = assign({}, EventEmitter.prototype, {
     },
 
     emitChange: function() {
-        console.log('emitting event');
+        console.log('taskStore:emitChange emitting event');
         this.emit(CHANGE_EVENT);
     },
 
     getAllTasks: function() {
+        console.log('taskStore:getAllTasks ' + _tasks.length);
         return _tasks;
     },
 
@@ -39,7 +40,11 @@ var TaskStore = assign({}, EventEmitter.prototype, {
 //called ANYTIME ANY action/event happens
 Dispatcher.register(function(action){
     switch (action.actionType) {
+        case ActionTypes.INITIALIZE:
+            _tasks = action.initialData.tasks;
+            break;
         case ActionTypes.CREATE_TASK:
+            console.log('taskStore:[eventCaught] adding task to list');
             _tasks.push(action.task);
             TaskStore.emitChange();
             break;

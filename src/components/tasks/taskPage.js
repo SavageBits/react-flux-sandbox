@@ -3,6 +3,7 @@
 var React = require('react');
 var TaskApi = require('../../api/taskApi');
 var TaskList = require('./taskList');
+var TaskStore = require('../../stores/taskStore');
 var ReactFireMixin = require('reactfire');
 var Firebase = require('firebase');
 
@@ -26,8 +27,9 @@ var TaskPage = React.createClass({
     },
 
     getInitialState: function() {
+        console.log('getting initial state of task list');
         return {
-            tasks: []
+            tasks: TaskStore.getAllTasks()
         };
     },
 
@@ -37,17 +39,17 @@ var TaskPage = React.createClass({
     //     this.bindAsArray(ref, "items");
     // },
 
-    componentDidMount: function() {
-        if(this.isMounted()) {
-            //will need to use callback or promise when actually hitting db
-            // so we call setState after the data is returned from the datasource
-            this.setState({ tasks: TaskApi.getAllTasks() });
-
-            // TaskApi.loadTasks(function(){
-            //     console.log('tasks loaded');
-            // });
-        }
-    },
+    // componentDidMount: function() {
+    //     if(this.isMounted()) {
+    //         //will need to use callback or promise when actually hitting db
+    //         // so we call setState after the data is returned from the datasource
+    //         //this.setState({ tasks: TaskApi.getAllTasks() });
+    //
+    //         // TaskApi.loadTasks(function(){
+    //         //     console.log('tasks loaded');
+    //         // });
+    //     }
+    // },
 
     render: function() {
         return (

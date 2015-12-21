@@ -24,8 +24,12 @@ var TaskApi = {
 
     },
 
-    saveTask: function() {
-        console.log("creating task");
+    saveTask: function(task) {
+        console.log("taskApi:saveTask creating task");
+        return {
+            id: task.id,
+            taskDescription: task.taskDescription
+        }
     }
 }
 

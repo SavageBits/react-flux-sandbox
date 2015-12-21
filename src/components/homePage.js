@@ -25,7 +25,11 @@ var Home = React.createClass({
 
     getInitialState: function() {
         return {
-            task: { what: '', when: '' },
+            task: {
+                id: 0,
+                taskDescription: '',
+                taskDate: ''
+            },
             errors: {},
             dirty: false
         };
@@ -50,6 +54,7 @@ var Home = React.createClass({
         }
 
         //TaskApi.saveTask(this.state.task);
+        console.log('homePage:saveTask ' + this.state.task.taskDescription);
         TaskActions.createTask(this.state.task);
 
         this.setState({dirty: false});
@@ -63,8 +68,8 @@ var Home = React.createClass({
         var formIsValid = true;
         this.state.errors = {};
 
-        if (this.state.task.what.length < 1) {
-            this.state.errors.what = 'No what!';
+        if (this.state.task.taskDescription.length < 1) {
+            this.state.errors.taskDescription = 'No what!';
             formIsValid = false;
         }
 

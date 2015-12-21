@@ -10,6 +10,8 @@ var TaskActions = {
         // since that process would likely be async
         var newTask = TaskApi.saveTask(task);
 
+        console.log(newTask);
+
         //Hey, dispatcher... go tell all the stores that a task was just created
         Dispatcher.dispatch({
             actionType: ActionTypes.CREATE_TASK,

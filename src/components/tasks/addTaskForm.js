@@ -19,10 +19,10 @@ var AddTaskForm = React.createClass({
                     <div className="form-group">
                         <label htmlFor="inputTodoText">what is happening</label>
                         <input className="form-control" id="inputTodoText" type="text" size="30"
-                            name="what"
-                            value={this.props.task.what}
+                            name="taskDescription"
+                            value={this.props.task.taskDescription}
                             onChange={this.props.onChange}
-                            error={this.props.errors.what} />
+                            error={this.props.errors.taskDescription} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="inputTodoDate">when it be</label>
