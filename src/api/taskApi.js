@@ -25,7 +25,7 @@ var TaskApi = {
     },
 
     saveTask: function() {
-        console.log("save clicked");
+        console.log("creating task");
     }
 }
 

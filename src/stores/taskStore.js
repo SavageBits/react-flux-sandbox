@@ -23,6 +23,7 @@ var TaskStore = assign({}, EventEmitter.prototype, {
     },
 
     emitChange: function() {
+        console.log('emitting event');
         this.emit(CHANGE_EVENT);
     },
 
