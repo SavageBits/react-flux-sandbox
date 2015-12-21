@@ -1,6 +1,7 @@
 "use strict";
 
 var React = require('react');
+// replace this with reference to taskStore
 var TaskApi = require('../../api/taskApi');
 
 var Task = React.createClass({

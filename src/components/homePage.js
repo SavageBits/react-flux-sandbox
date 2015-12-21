@@ -4,7 +4,9 @@ var React = require('react');
 var Router = require('react-router');
 var AddTaskForm = require('./tasks/addTaskForm');
 var TaskPage = require('./tasks/taskPage');
-var TaskApi = require('../api/taskApi');
+//var TaskApi = require('../api/taskApi');
+var TaskActions = require('../actions/taskActions');
+var TaskStore = require('../stores/taskStore');
 var toastr = require('toastr');
 
 var Home = React.createClass({
@@ -46,7 +48,8 @@ var Home = React.createClass({
             return;
         }
 
-        TaskApi.saveTask(this.state.task);
+        //TaskApi.saveTask(this.state.task);
+        TaskActions.createTask(this.state.task);
 
         this.setState({dirty: false});
 
