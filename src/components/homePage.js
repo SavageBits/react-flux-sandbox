@@ -7,6 +7,7 @@ var TaskPage = require('./tasks/taskPage');
 //var TaskApi = require('../api/taskApi');
 var TaskActions = require('../actions/taskActions');
 var TaskStore = require('../stores/taskStore');
+var DummyStore  = require('../stores/dummyStore');
 var toastr = require('toastr');
 
 var Home = React.createClass({

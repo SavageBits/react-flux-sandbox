@@ -1,7 +1,11 @@
+// just a test store to listen to all events
 "use strict";
 
 var EventEmitter = require('events').EventEmitter;
 var Dispatcher = require('../dispatcher/appDispatcher');
+var assign = require('object-assign');
+
+var CHANGE_EVENT = 'change';
 
 var DummyStore = assign({}, EventEmitter.prototype, {
     addChangeListener: function(callback) {
@@ -19,7 +23,7 @@ var DummyStore = assign({}, EventEmitter.prototype, {
 });
 
 Dispatcher.register(function(action) {
-    this.emitChange();
+    DummyStore.emitChange();
 });
 
 module.exports = DummyStore;
