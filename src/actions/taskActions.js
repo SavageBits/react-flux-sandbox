@@ -17,6 +17,15 @@ var TaskActions = {
             actionType: ActionTypes.CREATE_TASK,
             task: newTask
         });
+    },
+
+    updateTask: function(task) {
+        var updatedTask = TaskApi.saveTask(task);
+
+        Dispatcher.dispatch({
+            actionType: ActionTypes.UPDATE_TASK,
+            task: updatedTask
+        });
     }
 }
 

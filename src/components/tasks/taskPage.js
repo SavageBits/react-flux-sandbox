@@ -27,7 +27,7 @@ var TaskPage = React.createClass({
     },
 
     getInitialState: function() {
-        console.log('getting initial state of task list');
+        console.log('taskPage:getInitialState getting initial state of task list');
         return {
             tasks: TaskStore.getAllTasks()
         };

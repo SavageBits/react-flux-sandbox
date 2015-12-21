@@ -61,7 +61,7 @@ var Home = React.createClass({
 
         toastr.success('Did it');
 
-        this.transitionTo('about');
+        //this.transitionTo('app');
     },
 
     authorFormIsValid: function() {

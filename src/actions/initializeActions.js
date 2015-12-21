@@ -4,6 +4,7 @@ var TaskApi = require('../api/taskApi');
 
 var InitializeActions = {
     initApp: function() {
+        console.log('initializeActions:initApp calling dispatch for initializing tasks')
         Dispatcher.dispatch({
             actionType: ActionTypes.INITIALIZE,
             initialData: {

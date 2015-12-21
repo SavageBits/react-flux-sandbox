@@ -39,13 +39,23 @@ var TaskStore = assign({}, EventEmitter.prototype, {
 
 //called ANYTIME ANY action/event happens
 Dispatcher.register(function(action){
+    console.log('taskStore registering for events');
     switch (action.actionType) {
         case ActionTypes.INITIALIZE:
+            console.log('taskStore:[eventCaught] adding task to list');
             _tasks = action.initialData.tasks;
+            TaskStore.emitChange();
             break;
         case ActionTypes.CREATE_TASK:
             console.log('taskStore:[eventCaught] adding task to list');
             _tasks.push(action.task);
+            TaskStore.emitChange();
+            break;
+        case ActionTypes.UPDATE_TASK:
+            //find the task
+            var existingTask = _.find(_tasks, {id: action.task.id});
+            var existingTaskIndex = _.indexOf(_tasks, existingTask);
+            _tasks.splice(existingTaskIndex, 1, action.task);
             TaskStore.emitChange();
             break;
         default:
